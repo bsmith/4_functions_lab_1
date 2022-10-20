@@ -1,3 +1,5 @@
+import datetime
+
 def return_10():
     return 10
 
@@ -24,9 +26,11 @@ def add_string_as_number(string_1, string_2):
     number_2 = int(string_2)
     return number_1 + number_2
 
-FULL_MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+# FULL_MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 def number_to_full_month_name(number):
-    return FULL_MONTH_NAMES[number - 1]
+    dt = datetime.datetime(2022, number, 1)
+    return dt.strftime("%B")
+    # return FULL_MONTH_NAMES[number - 1]
     # if number == 1:
     #     return "January"
     # elif number == 3:
